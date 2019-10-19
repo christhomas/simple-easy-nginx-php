@@ -1,0 +1,30 @@
+version: "3.4"
+
+volumes:
+  postgres:
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - 3000:80
+
+  phpfpm:
+    build:
+      context: .
+      dockerfile: docker/phpfpm/Dockerfile
+    volumes:
+      - $PWD:/www
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - .env

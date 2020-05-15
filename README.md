@@ -3,6 +3,11 @@ This repository will easily allow you to quickly run a nginx/phpfpm with volume 
 
 ## Getting Started
 
+0. Install docker onto your computer
+    - Once installed, you'll be able to run any manner of servers side by side, multiple mysql databases, multiple websites
+    - You'll start to learn the benefits of docker and how it's so much simpler than using XAMPP or variants
+    - You'll learn the value of infrastructure as code. If you're a new developer. You'll be years ahead of your XAMPP loving colleagues
+
 1. Run `composer install`
     - This will install any dependencies you have, already I have setup the tests for you to start working on those
     - It will also copy the `.env.dist` to `.env` so your application has a starting set of environment variables that you can modify
